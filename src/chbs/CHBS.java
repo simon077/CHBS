@@ -11,11 +11,16 @@ package chbs;
  */
 public class CHBS {
 
-    /**
+    /*
      * @param args the command line arguments
      */
+    
+    static String fileContentsString;
     public static void main(String[] args) {
         // TODO code application logic here
+        LoginForm form1 = new LoginForm();
+        form1.setVisible(true);
+        
+        HomeForm.run();
     }
-    
 }
