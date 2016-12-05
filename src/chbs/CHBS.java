@@ -15,12 +15,14 @@ public class CHBS {
      * @param args the command line arguments
      */
     
+    static int priceGold, priceSilver, priceBronze;
     static String fileContentsString;
     public static void main(String[] args) {
         // TODO code application logic here
         LoginForm form1 = new LoginForm();
         form1.setVisible(true);
         
-        HomeForm.run();
+        ConcertHallFrame a = new ConcertHallFrame();
+        a.initComponents();
     }
 }
