@@ -5,7 +5,9 @@
  */
 package chbs;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 
 /**
  * @author Simon
@@ -14,20 +16,38 @@ public class Seat extends javax.swing.JButton {
 
     boolean booked;
     int id, price;
-    String colour;
+    String colour, bookedBy;
+    static Color gold = new Color(255, 215, 0);
+    static Color silver = new Color(192, 192, 192);
+    static Color bronze = new Color(205, 127, 50);
 
     //Constructors
     public Seat() {
 
     }
 
-    public Seat(boolean booked, int id, int price, String colour) {
+    public Seat(boolean booked, int id, int price, String colour, String bookedBy) {
         this.booked = booked;
+        this.id = id;
+        this.price = price;
+        this.colour = colour;
+        this.bookedBy = bookedBy;
+
+        if (colour == "gold") {
+            setBackground(gold);
+        }
+        if (colour == "silver") {
+            setBackground(silver);
+        }
+        if (colour == "bronze") {
+            setBackground(bronze);
+        }
     }
 
     //Gets and Sets
     public boolean getBooked() {
         return booked;
+
     }
 
     public int getID() {
@@ -40,6 +60,9 @@ public class Seat extends javax.swing.JButton {
 
     public String getColour() {
         return colour;
+    }
+    public String getBookedBy(){
+        return bookedBy;
     }
 
     public void setBooked(boolean Booked) {
@@ -57,8 +80,7 @@ public class Seat extends javax.swing.JButton {
     public void setColour(String Colour) {
         colour = Colour;
     }
-    
-    public void actionPerformed(ActionEvent e) { 
-
-}
+    public void setBookedBy(String BookedBy){
+        bookedBy = BookedBy;
+    }
 }

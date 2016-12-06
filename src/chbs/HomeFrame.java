@@ -9,12 +9,12 @@ package chbs;
  *
  * @author Simon
  */
-public class HomeForm extends javax.swing.JFrame {
+public class HomeFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form HomeForm
      */
-    public HomeForm() {
+    public HomeFrame() {
         initComponents();
     }
 
@@ -60,7 +60,6 @@ public class HomeForm extends javax.swing.JFrame {
         btnDeleteExistingConcert = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(760, 730));
 
         lblAddNewConcert1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblAddNewConcert1.setText("Add a New Concert");
@@ -300,20 +299,21 @@ public class HomeForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HomeForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(HomeFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeForm().setVisible(true);
+                new HomeFrame().setVisible(true);
             }
         });
     }

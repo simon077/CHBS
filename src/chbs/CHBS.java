@@ -18,11 +18,11 @@ public class CHBS {
     static int priceGold, priceSilver, priceBronze;
     static String fileContentsString;
     public static void main(String[] args) {
-        // TODO code application logic here
-        LoginForm form1 = new LoginForm();
-        form1.setVisible(true);
         
-        ConcertHallFrame a = new ConcertHallFrame();
-        a.initComponents();
+        LoginFrame loginFrame = new LoginFrame();
+        loginFrame.setVisible(true);
+        
+        //ConcertHallFrame a = new ConcertHallFrame();
+        //a.initComponents();
     }
 }

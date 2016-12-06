@@ -5,16 +5,21 @@
  */
 package chbs;
 
+import javax.swing.JOptionPane;
+
 /*
  *
  * @author Simon
  */
-public class LoginForm extends javax.swing.JFrame {
+public class LoginFrame extends javax.swing.JFrame {
 
     /*
      * Creates new form LoginForm
      */
-    public LoginForm() {
+    String correctUsername = "admin";
+    char[] correctPassword = new char[] { 'p', 'a', 's', 's', 'w', 'o', 'r', 'd'};
+    String correctPasswordString = new String(correctPassword);
+    public LoginFrame() {
         initComponents();
     }
 
@@ -62,6 +67,11 @@ public class LoginForm extends javax.swing.JFrame {
 
         btnLogin.setForeground(new java.awt.Color(31, 58, 147));
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         lblSubtitle.setForeground(new java.awt.Color(31, 58, 147));
         lblSubtitle.setText("Concert Hall Booking System");
@@ -133,6 +143,19 @@ public class LoginForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+
+        String enteredPassword = new String(txtPassword.getPassword());
+        if(txtUsername.getText() == correctUsername & enteredPassword == correctPasswordString){
+            HomeFrame homeFrame = new HomeFrame();
+            
+            homeFrame.setVisible(true);
+        }
+        else {JOptionPane.showMessageDialog(null, txtUsername.getText());
+                
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
+
     /*
      * @param args the command line arguments
      */
@@ -150,20 +173,21 @@ public class LoginForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginForm().setVisible(true);
+                new LoginFrame().setVisible(true);
             }
         });
     }
